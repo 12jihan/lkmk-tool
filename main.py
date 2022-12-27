@@ -13,7 +13,7 @@ def main():
     App = QApplication(sys.argv)
 
     window = gui()
-    sys.exit(App.exec())
+    sys.exit(App.exec())    
     
 
 if __name__=="__main__":
