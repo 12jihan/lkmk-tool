@@ -7,33 +7,14 @@ class GUIEditor(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("LKMK Editor")
-        self.resize(600, 600)
+        # self.resize(600, 600)
         mainLayout = QVBoxLayout()
         titleContainer = QHBoxLayout()
         contentContainer = QHBoxLayout()
-        row1 = QVBoxLayout()
 
-        l = QTextItem("op")
-        label1 = QLabel("LKMK Editor")
-        label2 = QLabel("LKMK Editor")
-        label3 = QLabel("LKMK Editor")
-
-        btn1 = QPushButton("support")
-        btn2 = QPushButton("support")
-        btn3 = QPushButton("support")
-
-        # Title Container:
-        row1.addWidget(label1)
-        row1.addWidget(label2)
-        row1.addWidget(label3)
         
-        # Content Container:
-        row1.addWidget(btn1)
-        row1.addWidget(btn2)
-        row1.addWidget(btn3)
-
         # Layout Settings:
-        contentContainer.addLayout(row1)
+        contentContainer.addWidget(self._createDropdown("hello"))
         mainLayout.addLayout(titleContainer)
         mainLayout.addLayout(contentContainer)
 
@@ -43,6 +24,27 @@ class GUIEditor(QWidget):
 
     
 
+    def _createDropdown(self, label):
+        # Dropdown Menu Widget
+        vbox = QVBoxLayout()
+        groupBox = QGroupBox("groupbox example")
+        dropDown = QComboBox()
+
+        dropDown.addItems(['2 by 2', '2 by 3', '3 by 3', '4 by 4'])
+        vbox.addWidget(dropDown)
+
+        groupBox.setLayout(vbox)
+        return groupBox
+
+    def _createLabel(self, label):
+        # Label Widget:
+        label = QLayout(label)
+
+        # Label Widget Styling:
+
+        # Label Return Value:
+        return label
+    
     def initGUI(self):
         pass
         #app Setup:
