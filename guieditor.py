@@ -24,7 +24,7 @@ class GUIEditor(QWidget):
 
     
 
-    def _createDropdown(self, label):
+    def _createDropdown(self, label, array):
         # Dropdown Menu Widget
         vbox = QVBoxLayout()
         groupBox = QGroupBox("groupbox example")
