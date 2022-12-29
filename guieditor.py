@@ -41,6 +41,7 @@ class GUIEditor(QWidget):
         label = QLayout(label)
 
         # Label Widget Styling:
+        
 
         # Label Return Value:
         return label
