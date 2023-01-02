@@ -7,14 +7,14 @@ class GUIEditor(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("LKMK Editor")
-        # self.resize(600, 600)
+        self.resize(600, 600)
         mainLayout = QVBoxLayout()
         titleContainer = QHBoxLayout()
         contentContainer = QHBoxLayout()
 
         
         # Layout Settings:
-        contentContainer.addWidget(self._createDropdown("hello"))
+        contentContainer.addWidget(self._createDropdown("hello", ["2x2", "2x3", "4x4"]))
         mainLayout.addLayout(titleContainer)
         mainLayout.addLayout(contentContainer)
 
@@ -27,10 +27,10 @@ class GUIEditor(QWidget):
     def _createDropdown(self, label, array):
         # Dropdown Menu Widget
         vbox = QVBoxLayout()
-        groupBox = QGroupBox("groupbox example")
+        groupBox = QGroupBox(label)
         dropDown = QComboBox()
 
-        dropDown.addItems(['2 by 2', '2 by 3', '3 by 3', '4 by 4'])
+        dropDown.addItems(array)
         vbox.addWidget(dropDown)
 
         groupBox.setLayout(vbox)
@@ -41,7 +41,7 @@ class GUIEditor(QWidget):
         label = QLayout(label)
 
         # Label Widget Styling:
-        
+
 
         # Label Return Value:
         return label
